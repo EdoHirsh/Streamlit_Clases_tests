@@ -10,12 +10,6 @@ tam_fuentes=12
 @np.vectorize
 def func_f(x: int):
   return ((-1)**x)*(1/x)
-  # return ((-1)**x)*(0.1+1/x)
-  # return (np.cos(x))^2/x
-  # ind = np.arange(1,x+1)
-  # suc =((-1)**ind)*(1/ind)
-  # return np.sum(suc)
-
 
 def Draw_Sucesion_1D(n , intervalo_x = [-0.05,1.05], intervalo_y = [-0.125,0.125],solo_ultimo = False, Plot_dark = True, ocultar_etiquetas = False):
   indices_suc= np.arange(1,n+1)
@@ -75,7 +69,6 @@ def main():
   if Full_Latex:
     plt.rcParams.update({
       "text.usetex": True,
-      # "font.family": "Helvetica"
       "font.size": tam_fuentes
     })
 

@@ -35,10 +35,10 @@ def Draw_Sucesion_1D(n , intervalo_x = [-0.05,1.05], intervalo_y = [-0.125,0.125
   # etiquetas de los puntos
   if not ocultar_etiquetas:
     if solo_ultimo:
-      ax.text(sucesion, 0.025 , f'a_{{{n}}}', fontsize=tam_fuentes, ha='center', va='bottom')
+      ax.text(sucesion, 0.025 , f'a {n}', fontsize=tam_fuentes, ha='center', va='bottom')
     else:
       for i in range(n):
-        ax.text(sucesion[i], 0.025 , f'a_{{{i+1}}}', fontsize=tam_fuentes, ha='center', va='bottom')
+        ax.text(sucesion[i], 0.025 , f'a {i+1}', fontsize=tam_fuentes, ha='center', va='bottom')
 
   # etiquetas de los valores en los ejes
   etiquetas_x = np.arange(aux1, aux2+0.1*(aux2-aux1), 0.1*(aux2-aux1))

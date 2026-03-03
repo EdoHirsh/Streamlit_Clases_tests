@@ -8,7 +8,7 @@ tam_fuentes=12
 def func_f(x: int):
   return ((-1)**x)*(1/x)
 
-def Draw_Sucesion_1D(n , intervalo_x = [-0.05,1.05], intervalo_y = [-0.125,0.125],solo_ultimo = False, Plot_dark = True, ocultar_etiquetas = False):
+def Draw_Sucesion_1D(n , intervalo_x = [-0.05,1.05], intervalo_y = [-0.125,0.125],solo_ultimo = False, Plot_dark = False, ocultar_etiquetas = False):
   indices_suc= np.arange(1,n+1)
 
   #! iniciar figura
@@ -35,10 +35,10 @@ def Draw_Sucesion_1D(n , intervalo_x = [-0.05,1.05], intervalo_y = [-0.125,0.125
   # etiquetas de los puntos
   if not ocultar_etiquetas:
     if solo_ultimo:
-      ax.text(sucesion, 0.025 , f'a {n}', fontsize=tam_fuentes, ha='center', va='bottom')
+      ax.text(sucesion, 0.025 , f'a_{{{n}}}', fontsize=tam_fuentes, ha='center', va='bottom')
     else:
       for i in range(n):
-        ax.text(sucesion[i], 0.025 , f'a {i+1}', fontsize=tam_fuentes, ha='center', va='bottom')
+        ax.text(sucesion[i], 0.025 , f'a_{{{i+1}}}', fontsize=tam_fuentes, ha='center', va='bottom')
 
   # etiquetas de los valores en los ejes
   etiquetas_x = np.arange(aux1, aux2+0.1*(aux2-aux1), 0.1*(aux2-aux1))
@@ -53,7 +53,7 @@ def Draw_Sucesion_1D(n , intervalo_x = [-0.05,1.05], intervalo_y = [-0.125,0.125
 
 def main():
   #! parametros para grafico
-  Plot_dark = True
+  Plot_dark = False
 
   # intervalos x e y
   intervalo_x = [-1.5,1.5]
@@ -69,16 +69,16 @@ def main():
 
   #! Checkboxes para opciones de visualización
   # n = st.sidebar.slider('indique el valor de $n$', 1, 100, 6, 1)
-  n = st.sidebar.number_input('indique el valor de n', min_value=1, value=n, step=1)
+  n = st.sidebar.number_input('indique el valor de $n$', min_value=1, value=n, step=1)
   # solo_ultimo = st.sidebar.checkbox('Mostrar solo el último término', value=False)
   ocultar_etiquetas = st.sidebar.toggle('Ocultar etiquetas sucesión', value=False)
   solo_ultimo = st.sidebar.toggle('Mostrar solo el término actual', value=False)
   # Plot_dark = st.sidebar.checkbox('Tema oscuro en el gráfico', value=Plot_dark)
-  Plot_dark = st.sidebar.toggle(label='Gráfico modo oscuro', value=True, key='toggle_dark_mode')
-  if Plot_dark:
-    plt.style.use('dark_background')
-  else:
-    plt.style.use('default')
+  # Plot_dark = st.sidebar.toggle(label='Gráfico modo oscuro', value=True, key='toggle_dark_mode')
+  # if Plot_dark:
+  #   plt.style.use('dark_background')
+  # else:
+  #   plt.style.use('default')
 
   #! Generar gráfico con spinner
   with st.spinner('Generando gráfico...'):

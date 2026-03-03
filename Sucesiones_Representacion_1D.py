@@ -56,7 +56,7 @@ def main():
   Plot_dark = False
 
   # intervalos x e y
-  intervalo_x = [-1.5,1.5]
+  intervalo_x = [-1,1]
 
   # cantidad numero de elementos de la sucesion
   n=6

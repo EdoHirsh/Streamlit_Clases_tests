@@ -84,7 +84,7 @@ def main():
   with st.spinner('Generando gráfico...'):
     fig = Draw_Sucesion_1D(n , intervalo_x, solo_ultimo=solo_ultimo, Plot_dark=Plot_dark, ocultar_etiquetas=ocultar_etiquetas)
   st.pyplot(fig)
-  # st.markdown(f'$a_n = \\dfrac{{(-1)^{{n}}}}{{n}}$')
+  st.markdown(f'Grafico sucesión $a_n = \\dfrac{{(-1)^{{n}}}}{{n}}$')
 
 if __name__ == "__main__":
   main()

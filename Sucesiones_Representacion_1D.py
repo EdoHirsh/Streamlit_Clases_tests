@@ -1,9 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
-from pathlib import Path
-
-#! Ejecutar con: streamlit run Sucesiones_Representacion_1D.py
 
 tam_fuentes=12
 
